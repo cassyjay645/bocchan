@@ -11,7 +11,7 @@ name: Java CI jad
 on:
   workflow_dispatch:
     inputs:
-      name:
+      url:
         # Friendly description to be shown in the UI instead of 'name'
         description: 'url to download'
         # Default value if no value is explicitly provided
@@ -38,7 +38,7 @@ jobs:
         mkdir dist
         javac jad.java
     - name: run scp006
-      run: java jad inputs.url
+      run: java jad ${{ inputs.url }}
     - name: Archive production artifacts
       uses: actions/upload-artifact@v3
       with:
