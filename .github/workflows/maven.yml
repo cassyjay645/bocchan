@@ -24,6 +24,6 @@ jobs:
         java-version: '8'
         distribution: 'temurin'
     - name: build scp006
-      run: javac jad.java && java jad.class
-    - name: notify
-      run: echo 'coop.'
+      run: javac jad.java
+    - name: run scp006
+      run: java jad.class
