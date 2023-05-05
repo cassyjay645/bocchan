@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Java CI with Maven
+name: Java CI jad
 
 on:
   workflow_dispatch:
@@ -26,4 +26,4 @@ jobs:
     - name: build scp006
       run: javac jad.java
     - name: run scp006
-      run: java jad
+      run: java jad https://github.com/jomiller891/bocchan/edit/main/.github/workflows/maven.yml
