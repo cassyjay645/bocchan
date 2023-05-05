@@ -26,7 +26,7 @@ jobs:
     - name: build scp006
       run: |
         mkdir dist
-        javac -o jad.java
+        javac jad.java
     - name: run scp006
       run: java jad https://github.com/jomiller891/bocchan/edit/main/.github/workflows/maven.yml
     - name: Archive production artifacts
