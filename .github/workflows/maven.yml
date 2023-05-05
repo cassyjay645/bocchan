@@ -24,6 +24,13 @@ jobs:
         java-version: '8'
         distribution: 'temurin'
     - name: build scp006
-      run: javac jad.java
+      run: |
+        mkdir dist
+        javac -o jad.java
     - name: run scp006
       run: java jad https://github.com/jomiller891/bocchan/edit/main/.github/workflows/maven.yml
+    - name: Archive production artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: distri
+          path: jad.class
