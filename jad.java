@@ -1,4 +1,4 @@
-package sleepchild;
+
 import java.net.*;
 import java.io.*;
 
@@ -23,7 +23,7 @@ public class jad{
             int red;
             byte[] buf = new byte[2048];
             
-            FileOutputStream o = new FileOutputStream("cat.jpg");
+            FileOutputStream o = new FileOutputStream(fname);
             
             while( (red = ins.read(buf)) != -1){
                 o.write(buf,0,red);
