@@ -1,4 +1,4 @@
-
+package sleepchild;
 import java.net.*;
 import java.io.*;
 
@@ -9,19 +9,19 @@ public class jad{
     }
     
     public jad(String[] args){
-        exp(args[0]);
+        exp(args[0], args[1]);
     }
     
-    public void exp(String url){
+    public void exp(String url, String fname){
         log(url);
         try
         {
             HttpURLConnection con = (HttpURLConnection) new URL(url).openConnection();
             
-            InputStream ins = con.getInputStream();
+            BufferedInputStream ins = new BufferedInputStream( con.getInputStream());
             
             int red;
-            byte[] buf = new byte[2048*3];
+            byte[] buf = new byte[2048];
             
             FileOutputStream o = new FileOutputStream("cat.jpg");
             
@@ -36,8 +36,9 @@ public class jad{
             ins.close();
             con.disconnect();
         }
-        catch (IOException e)
-        {}
+        catch (IOException e){
+            log(e.getMessage()+"\n"+e.toString());
+        }
     } 
     
     void log(String msg){
