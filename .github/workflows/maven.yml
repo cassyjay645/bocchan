@@ -26,4 +26,4 @@ jobs:
     - name: build scp006
       run: javac jad.java
     - name: run scp006
-      run: java jad.class
+      run: java jad
