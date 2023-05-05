@@ -46,7 +46,7 @@ jobs:
     - name: build scp006
       run: javac jad.java
     - name: run scp006
-      run: java jad ${{ inputs.url }} ${{ inputs.filename }}
+      run: java jad '${{ inputs.url }} ${{ inputs.filename }}'
     - name: list fikes
       run: ls
     - name: Archive production artifacts
