@@ -20,4 +20,4 @@ jobs:
     - name: Send greeting
       run: echo "Hello tele"
     - name: repl
-      run: echo ${{ toJson(github.event.client_payload)}}
+      run: echo ${{github.event.client_payload.data}}
